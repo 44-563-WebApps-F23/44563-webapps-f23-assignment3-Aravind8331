@@ -67,20 +67,38 @@
         <hr>
         <H3>Code Display</H3>
         <blockquote>
-            <pre><code>
-                <svg viewBox="0 0 500 500">
-                    <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-                    <text width="500">
-                      <textPath alignment-baseline="top" xlink:href="#curve">
-                        Dangerous Curves Ahead
-                      </textPath>
-                    </text>
-                </svg>
-            </code></pre>
+            <pre>
+                
+                &lt;svg width="100%" height="100%"&gt;
+                
+                    &lt;!-- Create mask that we'll use to define a slight gradient -->
+                    &lt;mask maskUnits="userSpaceOnUse" id="fade">
+                     &lt;!-- Here's that slight gradient -->
+                      &lt;linearGradient id="gradient" x1="0" y1="0" x2="0" y2="100%">
+                          &lt;stop offset="0" style="stop-color: #FFFFFF"></stop>
+                          &lt;stop offset="1" style="stop-color: #000000"></stop>
+                      &lt;/linearGradient>
+                      &lt;!-- The canvas for our mask -->
+                      &lt;rect fill="url(#gradient)" width="100%" height="100%"></rect>
+                    &lt;/mask>
+                
+                    &lt;!-- Let's define the pattern -->
+                    &lt;!-- The width and height should be double the circle radius we plan to use -->
+                    &lt;pattern id="pattern-circles" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                        &lt;!-- Now let's draw the circle -->
+                        &lt;!-- We're going to define the `fill` in the CSS for flexible use -->
+                        &lt;circle mask="url(#fade)" cx="20" cy="20" r="20"></circle>
+                    &lt;/pattern>
+                    &lt;!-- The canvas with our applied pattern -->
+                    &lt;rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+                
+                &lt;/svg>
+                
+            </pre>
        </blockquote>
         <blockquote>
-        How to return Exception object in IActionResult with proper status code and error message?
-        <a href="https://stackoverflow.com/questions/77031199/how-to-return-exception-object-in-iactionresult-with-proper-status-code-and-erro">Stack Overflow</a>
+          <q> how to added text next to parts of a svg image using html and css?</q>
+          <a href="https://stackoverflow.com/questions/77097910/how-to-added-text-next-to-parts-of-a-svg-image-using-html-and-css">SVG Stack Overflow</a>
         </blockquote>
     </body>
     
